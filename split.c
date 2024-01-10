@@ -1,11 +1,11 @@
-nclude "main.h"
+#include "main.h"
 
 /**
  * *split - split line
  * *@line: line
  * *@linesize: lonesize
  * * Return: char**
- * */
+ **/
 char **split(char *line, int *linesize)
 {
 	const char *d = " \n\t";
