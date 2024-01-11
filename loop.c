@@ -12,9 +12,9 @@ int  loop(void)
 
 	char **tokens;
 
-	ssize_t linesize;
+	size_t linesize;
 
-	linesize = get_line_size();
+/*	linesize = get_line_size();*/
 
 
 	while (1)
@@ -25,12 +25,13 @@ int  loop(void)
 		}
 
 
-		line = shell_read_line();
+		line = readline();
 		if (!line)
 		{
 			break;
 		}
 
+		linesize = strlen(line);
 
 		tokens = split(line, &linesize);
 
@@ -40,4 +41,5 @@ int  loop(void)
 
 	free(line);
 	free(tokens);
+	return (0);
 }

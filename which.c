@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * * get_path - Get the path
- * *
- * * @cmd: command
- * * Return: char*
+ ** get_path - Get the path
+ **
+ ** @cmd: command
+ ** Return: char*
  **/
 char *get_path(char *cmd)
 {
@@ -49,3 +49,4 @@ char *get_path(char *cmd)
 	}
 	return (NULL);
 }
+

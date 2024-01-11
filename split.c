@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * *split - split line
- * *@line: line
- * *@linesize: lonesize
- * * Return: char**
+ **split - split line
+ **@line: line
+ **@linesize: lonesize
+ ** Return: char**
  **/
-char **split(char *line, int *linesize)
+char **split(char *line, size_t *linesize)
 {
 	const char *d = " \n\t";
 	char *copy, *token;
@@ -17,6 +17,7 @@ char **split(char *line, int *linesize)
 	copy = malloc(sizeof(char) * (*linesize + 1));
 	if (copy == NULL)
 	{
+		free(copy);
 		perror("malloc");
 		exit(EXIT_FAILURE);
 	}
@@ -30,7 +31,7 @@ char **split(char *line, int *linesize)
 	args = malloc(sizeof(char *) * (num_tokens + 1));
 	if (args == NULL)
 	{
-		free(copy);
+		free(args);
 		perror("malloc");
 		exit(EXIT_FAILURE);
 	}

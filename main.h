@@ -26,8 +26,8 @@ typedef struct built_in
 
 
 int loop(void);
-char **split(char *line, int *linesize);
-int get_line_size(void);
+char **split(char *line, size_t *linesize);
+ssize_t get_line_size(void);
 char  *readline();
 int execute(char **args);
 char *get_path(char *cmd);
